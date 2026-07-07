@@ -1,0 +1,38 @@
+-- Query 1: Work orders handled per technician
+SELECT t.riwi_technician_name, COUNT(w.riwi_order_id) AS total_orders
+FROM riwi_technicians t
+LEFT JOIN riwi_work_orders w ON t.riwi_technician_id = w.riwi_technician_id
+GROUP BY t.riwi_technician_id, t.riwi_technician_name;
+
+-- Query 2: History of services performed by city
+SELECT c.riwi_city_name, COUNT(w.riwi_order_id) AS total_services
+FROM riwi_cities c
+JOIN riwi_branches b ON c.riwi_city_id = b.riwi_city_id
+JOIN riwi_work_orders w ON b.riwi_branch_id = w.riwi_branch_id
+GROUP BY c.riwi_city_id, c.riwi_city_name;
+
+-- Query 3: Total services performed by service type
+SELECT s.riwi_service_type_name, COUNT(w.riwi_order_id) AS total_requests
+FROM riwi_service_types s
+LEFT JOIN riwi_work_orders w ON s.riwi_service_type_id = w.riwi_service_type_id
+GROUP BY s.riwi_service_type_id, s.riwi_service_type_name;
+
+-- Query 4: Equipment with the highest amount of maintenance
+SELECT e.riwi_equipment_name, COUNT(w.riwi_order_id) AS maintenance_count
+FROM riwi_equipment e
+JOIN riwi_work_orders w ON e.riwi_equipment_id = w.riwi_equipment_id
+GROUP BY e.riwi_equipment_id, e.riwi_equipment_name
+ORDER BY maintenance_count DESC;
+
+-- Query 5: Clients with the highest number of work orders
+SELECT cl.riwi_client_name, COUNT(w.riwi_order_id) AS orders_count
+FROM riwi_clients cl
+JOIN riwi_work_orders w ON cl.riwi_client_id = w.riwi_client_id
+GROUP BY cl.riwi_client_id, cl.riwi_client_name
+ORDER BY orders_count DESC;
+
+-- Query 6: Number of orders managed per branch
+SELECT b.riwi_branch_name, COUNT(w.riwi_order_id) AS managed_orders
+FROM riwi_branches b
+LEFT JOIN riwi_work_orders w ON b.riwi_branch_id = w.riwi_branch_id
+GROUP BY b.riwi_branch_id, b.riwi_branch_name;

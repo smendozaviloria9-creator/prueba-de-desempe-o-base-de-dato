@@ -1,0 +1,61 @@
+
+-- 1. ESTRUCTURA DE LA BASE DE DATOS (DDL)
+
+
+CREATE TABLE riwi_cities (
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE riwi_clients (
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE riwi_technicians (
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE riwi_equipment_categories (
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE riwi_service_types (
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE riwi_branches (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    city_id INT,
+    FOREIGN KEY (city_id) REFERENCES riwi_cities(id)
+);
+
+CREATE TABLE riwi_equipment (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES riwi_equipment_categories(id)
+);
+
+CREATE TABLE riwi_work_orders (
+    id VARCHAR(255) PRIMARY KEY,
+    client_id INT,
+    branch_id INT,
+    technician_id INT,
+    equipment_id INT,
+    service_type_id INT,
+    service_date DATE,
+    hours INT,
+    cost DECIMAL(10,2),
+    FOREIGN KEY (client_id) REFERENCES riwi_clients(id),
+    FOREIGN KEY (branch_id) REFERENCES riwi_branches(id),
+    FOREIGN KEY (technician_id) REFERENCES riwi_technicians(id),
+    FOREIGN KEY (equipment_id) REFERENCES riwi_equipment(id),
+    FOREIGN KEY (service_type_id) REFERENCES riwi_service_types(id)
+);
+
+

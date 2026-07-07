@@ -1,0 +1,39 @@
+INSERT INTO riwi_cities (riwi_city_id, riwi_city_name) VALUES 
+(1, 'Bogota'), (2, 'Medellin'), (3, 'Cali'), (4, 'Barranquilla'),
+(5, 'Cartagena'), (6, 'Pereira'), (7, 'Bucaramanga'), (8, 'Cucuta'),
+(9, 'Manizales'), (10, 'Santa Marta');
+
+-- Standardized Clients
+INSERT INTO riwi_clients (riwi_client_id, riwi_client_name) VALUES 
+(1, 'Acme Ltd'), (2, 'Innova SAS'), (3, 'NovaTech'), (4, 'BioHealth'),
+(5, 'SoftCorp'), (6, 'Vision SA'), (7, 'RetailOne'), (8, 'EduCenter'),
+(9, 'HealthPlus'), (10, 'MegaFoods');
+
+-- Standardized Technicians
+INSERT INTO riwi_technicians (riwi_technician_id, riwi_technician_name) VALUES 
+(1, 'Juan Perez'), (2, 'Maria Gomez'), (3, 'Carlos Ruiz'), 
+(4, 'Laura Diaz'), (5, 'Andres Mora');
+
+-- Standardized Categories
+INSERT INTO riwi_equipment_categories (riwi_category_id, riwi_category_name) VALUES 
+(1, 'Laptop'), (2, 'Desktop'), (3, 'Networking'), (4, 'Printer');
+
+-- Standardized Service Types
+INSERT INTO riwi_service_types (riwi_service_type_id, riwi_service_type_name) VALUES 
+(1, 'Preventive'), (2, 'Corrective'), (3, 'Installation'), (4, 'Maintenance');
+
+-- Standardized Branches
+INSERT INTO riwi_branches (riwi_branch_id, riwi_branch_name, riwi_city_id) VALUES 
+(1, 'North Office', 1), (2, 'HQ', 2), (3, 'West Branch', 3), (4, 'Main Office', 4),
+(5, 'Coast Branch', 5), (6, 'Coffee Branch', 6), (7, 'East Office', 7), 
+(8, 'NorthEast Branch', 8), (9, 'Central Office', 9), (10, 'Caribbean Branch', 10);
+
+-- Standardized Equipment Models
+INSERT INTO riwi_equipment (riwi_equipment_id, riwi_equipment_name, riwi_category_id) VALUES 
+(1, 'Dell Latitude 5420', 1), (2, 'HP ProDesk', 2), (3, 'Cisco 2960', 3), 
+(4, 'Canon Printer', 4), (5, 'Lenovo ThinkPad', 1), (6, 'Obsolete Unused Hub', 3);
+
+-- Transactional Data Mapping (Excel rows consolidated with 3NF IDs)
+INSERT INTO riwi_work_orders (riwi_order_id, riwi_client_id, riwi_branch_id, riwi_technician_id, riwi_equipment_id, riwi_service_type_id, riwi_service_date, riwi_hours_spent, riwi_service_cost) VALUES 
+('WO1001', 1, 1, 1, 1, 1, '2026-05-01', 2, 120.00),
+('WO1002', 1, 1, 1, 1, 1, '2026-05-02', 3, 180.00),

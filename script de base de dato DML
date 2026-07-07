@@ -1,0 +1,42 @@
+
+-- 2. MANIPULACIÓN DE DATOS (DML)
+
+
+INSERT INTO riwi_cities (id, name) VALUES 
+(1, 'Barranquilla'),
+(2, 'Bogota'),
+(3, 'Medellin');
+
+INSERT INTO riwi_clients (id, name) VALUES 
+(1, 'Tecno Redes S.A.S.'),
+(2, 'Soporte Global LTDA'),
+(3, 'Soluciones Digitales');
+
+INSERT INTO riwi_technicians (id, name) VALUES 
+(1, 'Carlos Mendoza'),
+(2, 'Andres Cortissoz'),
+(3, 'Elena Gomez');
+
+INSERT INTO riwi_equipment_categories (id, name) VALUES 
+(1, 'Laptops'),
+(2, 'Servers'),
+(3, 'Routers');
+
+INSERT INTO riwi_service_types (id, name) VALUES 
+(1, 'Preventive Support'),
+(2, 'Corrective Maintenance');
+
+INSERT INTO riwi_branches (id, name, city_id) VALUES 
+(1, 'North Branch', 1),
+(2, 'Downtown Office', 2),
+(3, 'Industrial Park Sede', 3);
+
+INSERT INTO riwi_equipment (id, name, category_id) VALUES 
+(1, 'ThinkPad L14', 1),
+(2, 'PowerEdge R750', 2),
+(3, 'Cisco ISR 4331', 3);
+
+INSERT INTO riwi_work_orders (id, client_id, branch_id, technician_id, equipment_id, service_type_id, service_date, hours, cost) VALUES 
+('WO-2026-001', 1, 1, 1, 1, 1, '2026-07-01', 3, 150.00),
+('WO-2026-002', 2, 2, 2, 2, 2, '2026-07-03', 5, 450.50),
+('WO-2026-003', 3, 3, 3, 3, 1, '2026-07-05', 2, 120.00);

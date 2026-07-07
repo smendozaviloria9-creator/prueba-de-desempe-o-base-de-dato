@@ -1,0 +1,9 @@
+INSERT INTO riwi_clients (riwi_client_id, riwi_client_name) VALUES (11, 'Innovatech Regional');
+INSERT INTO riwi_work_orders (riwi_order_id, riwi_client_id, riwi_branch_id, riwi_technician_id, riwi_equipment_id, riwi_service_type_id, riwi_service_date, riwi_hours_spent, riwi_service_cost) 
+VALUES ('WO1021', 11, 4, 1, 1, 1, '2026-05-21', 4, 320.00);
+
+-- Update: Update an existing technician's info
+UPDATE riwi_technicians SET riwi_technician_name = 'Juan Carlos Perez' WHERE riwi_technician_id = 1;
+
+-- Deletion: Delete an equipment that has no work orders associated
+DELETE FROM riwi_equipment WHERE riwi_equipment_id = 6;

@@ -1,17 +1,17 @@
 # prueba-de-desempe-o-base-de-dato
 # Project: Work Order Management System - TechCare Solutions
 
-**Student:** Sebastian Mendoza  
-**Clan:** Cortissoz  
+**Student:** Sebastian Mendoza 
+**Clan:** Cortissoz 
 
 This project contains the relational database design and table creation scripts for the technology maintenance management system of TechCare Solutions. The model has been structured following the Third Normal Form (3NF) rules to eliminate data redundancy and ensure data integrity.
 
-## 📁 Repository Content
+##  Repository Content
 
 *   **Database Structure:** SQL code for creating the master tables, intermediate tables, and the final transactional table.
 *   **Relational Design:** Logical configuration of entities and their relationships (1:N cardinalities).
 
-## 🛠️ Data Model (Created Tables)
+##  Data Model (Created Tables)
 
 1.  **riwi_cities:** Unified catalog of cities.
 2.  **riwi_clients:** Company clients registry.
@@ -22,7 +22,7 @@ This project contains the relational database design and table creation scripts 
 7.  **riwi_equipment:** Device models linked to a hardware category.
 8.  **riwi_work_orders:** Main table connecting all previous data with the service date, hours spent, and cost.
 
-## 🚀 Execution Instructions
+##  Execution Instructions
 
 To set up the database in your local environment (PostgreSQL / MySQL), follow these steps:
 
@@ -33,7 +33,7 @@ To set up the database in your local environment (PostgreSQL / MySQL), follow th
     * Then, tables with simple dependencies (`riwi_branches`, `riwi_equipment`).
     * Finally, the transactional table (`riwi_work_orders`).
 
-## 🔗 Diagram Code (dbdiagram.io)
+##  Diagram Code (dbdiagram.io)
 
 If you want to view the Entity-Relationship Diagram interactively, you can paste this clean code directly into the **dbdiagram.io** web tool:
 
